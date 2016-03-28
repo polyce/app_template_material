@@ -1,0 +1,27 @@
+<dom-module id="root-element">
+    <link rel="import" type="css" href="root_element.css">
+    <template>
+        <!-- local DOM for your element -->
+        <style include="theme"></style>
+        <paper-drawer-panel id="drawerPanel" responsive-width="1280px" transition>
+            <div class="nav layout vertical" drawer id="nav"><!-- Nav Content -->
+                <paper-toolbar><span>Polyce App</span></paper-toolbar>
+                <paper-menu id="menu" valueattr="hash" class="flex" attr-for-selected="hash" selected="{{selected}}">
+                    <template is="dom-repeat" items="{{pages}}">
+                        <paper-item class="menu-item" hash$={{item.name}}><span class="layout horizontal"><span
+                                class="flex">{{item.name}}</span></span></paper-item>
+                    </template>
+                </paper-menu>
+            </div>
+            <paper-header-panel class="main" main mode="waterfall" style="z-index: 0"><!-- Main Toolbar -->
+                <paper-toolbar>
+                    <paper-icon-button icon="menu" paper-drawer-toggle></paper-icon-button>
+                    <div class="flex">{{selected}}</div>
+                </paper-toolbar>
+                <div class="content">
+                    <polymer-app-router class="flex" selected="{{selected}}" pages="{{pages}}"></polymer-app-router>
+                </div>
+            </paper-header-panel>
+        </paper-drawer-panel>
+    </template>
+</dom-module>
