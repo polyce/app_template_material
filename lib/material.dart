@@ -1,5 +1,6 @@
 library polymer_app_test.material;
 
+export 'package:polymer_elements/iron_flex_layout/classes/iron_flex_layout.dart';
 export 'package:polymer_elements/iron_icon.dart';
 export 'package:polymer_elements/iron_icons.dart';
 export 'package:polymer_elements/iron_media_query.dart';
